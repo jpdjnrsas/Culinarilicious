@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =======================
+   GLOBAL UI RESET
+======================= */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* =======================
+   LAYOUT
+======================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =======================
+   CARDS (MODERN FOOD STYLE)
+======================= */
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* =======================
+   INPUTS
+======================= */
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15,118,110,0.15);
+}
+
+/* =======================
+   BUTTON SYSTEM (FINAL)
+======================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s ease;
+    border: none;
+}
+
+/* PRIMARY */
+.btn-primary {
+    background: #0f766e;
+    color: white;
+}
+.btn-primary:hover {
+    background: #134e4a;
+}
+
+/* INFO */
+.btn-info {
+    background: #2563eb;
+    color: white;
+}
+.btn-info:hover {
+    background: #1d4ed8;
+}
+
+/* DANGER */
+.btn-danger {
+    background: #dc2626;
+    color: white;
+}
+.btn-danger:hover {
+    background: #991b1b;
+}
+
+/* LIGHT */
+.btn-light {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+.btn-light:hover {
+    background: #cbd5e1;
+}
+
+/* =======================
+   GRID SYSTEM
+======================= */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+
+.navbar {
+    background: #0f766e;
+    color: white;
+    padding: 14px 20px;
+}
+
+.navbar a {
+    color: white;
+    margin-right: 12px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+/* =======================
+   SMALL UI HELPERS
+======================= */
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: #e2e8f0;
+}
