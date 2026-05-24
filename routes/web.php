@@ -32,7 +32,10 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    if (auth()->check()) {
+        return view('dashboard');
+    }
+    return redirect()->route('login');
 })->name('home');
 
 /*
