@@ -17,18 +17,20 @@
             <a href="/account" class="hero-user">
 
                 {{-- PROFILE --}}
-                @if(auth()->user()->profile_image)
-                    <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" class="avatar">
-                @else
-                    <div class="avatar-fallback">
-                        {{ strtoupper(substr(auth()->user()->name,0,1)) }}
+                @if(auth()->check())
+                    @if(auth()->user()->profile_image)
+                        <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" class="avatar">
+                    @else
+                        <div class="avatar-fallback">
+                            {{ strtoupper(substr(auth()->user()->name,0,1)) }}
+                        </div>
+                    @endif
+
+                    <div class="user-info">
+                        <h3>{{ auth()->user()->name }}</h3>
+                        <span>{{ auth()->user()->email }}</span>
                     </div>
                 @endif
-
-                <div class="user-info">
-                    <h3>{{ auth()->user()->name }}</h3>
-                    <span>{{ auth()->user()->email }}</span>
-                </div>
 
             </a>
 
@@ -38,7 +40,7 @@
         <section class="culina-grid">
 
             {{-- BUYER --}}
-            @if(auth()->user()->role == 'buyer')
+            @if(auth()->check() && auth()->user()->role == 'buyer')
 
                 <a href="/foods" class="card">
                     🍔 <div>
@@ -71,7 +73,7 @@
             @endif
 
             {{-- ADMIN --}}
-            @if(auth()->user()->role == 'admin')
+            @if(auth()->check() && auth()->user()->role == 'admin')
 
                 <a href="/admin/orders" class="card">
                     📦 <div>
@@ -104,7 +106,7 @@
             @endif
 
             {{-- RIDER --}}
-            @if(auth()->user()->role == 'rider')
+            @if(auth()->check() && auth()->user()->role == 'rider')
 
                 <a href="/rider/orders" class="card">
                     🚴 <div>
